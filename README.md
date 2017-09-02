@@ -23,6 +23,7 @@ http://www.cnblogs.com/leomYili/p/6346526.html
 jsPlumb官网提供社区版和toolkit版（付费），下载社区版js并在页面中引入。jsPlumb没有额外的依赖。
 
     <script src="jsplumb.js "></script>
+
 jsPlumb必须等到DOM加载完成之后使用：
     
     jsPlumb.bind("ready",function(){
@@ -37,6 +38,7 @@ jsPlumb必须等到DOM加载完成之后使用：
         // jsPlumb相关初始化代码
         ...
     });
+
 jsPlumb默认注册在浏览器的window对象中，为整个页面提供了一个静态实例(jsPlumb)可直接使用，你也可以用getInstance方法创建一个单独的实例。即你可以直接使用对象[jsPlumb]或[myInstance]来调用jsPlumb的方法：
 
     var myInstance = jsPlumb.getInstance();
