@@ -24,20 +24,19 @@ jsPlumb官网提供社区版和toolkit版（付费），下载社区版js并在�
 
     <script src="jsplumb.js "></script>
 jsPlumb必须等到DOM加载完成之后使用：
-
     
-	jsPlumb.bind("ready",function(){
-		...
-		// jsPlumb相关初始化代码
-		...
-	});
-	//or
-	...
+    jsPlumb.bind("ready",function(){
+        ...
+        // jsPlumb相关初始化代码
+        ...
+    });
+    //or
+    ...
     jsPlumb.ready(function(){  //简写
-	    ...
-		// jsPlumb相关初始化代码
-		...
-	});
+        ...
+        // jsPlumb相关初始化代码
+        ...
+    });
 jsPlumb默认注册在浏览器的window对象中，为整个页面提供了一个静态实例(jsPlumb)可直接使用，你也可以用getInstance方法创建一个单独的实例。即你可以直接使用对象[jsPlumb]或[myInstance]来调用jsPlumb的方法：
 
     var myInstance = jsPlumb.getInstance();
@@ -45,16 +44,16 @@ jsPlumb默认注册在浏览器的window对象中，为整个页面提供了一�
 设置默认配置（主要是点、线样式），两种方式，通过importDefaults方法或者getInstance中传参：
  
     myInstance.importDefaults({  //或jsPlumb.importDefaults();
-		Connector : [ "Bezier", { curviness: 150 } ],
-		Anchors : [ "TopCenter", "BottomCenter" ],
-		...
+        Connector : [ "Bezier", { curviness: 150 } ],
+        Anchors : [ "TopCenter", "BottomCenter" ],
+        ...
     });
     //or
-	var myInstance = jsPlumb.getInstance({
-	    Connector : [ "Bezier", { curviness: 150 } ],
-		Anchors : [ "TopCenter", "BottomCenter" ],
-		...
-	});
+    var myInstance = jsPlumb.getInstance({
+        Connector : [ "Bezier", { curviness: 150 } ],
+        Anchors : [ "TopCenter", "BottomCenter" ],
+        ...
+    });
 
 ## 几个概念
 
