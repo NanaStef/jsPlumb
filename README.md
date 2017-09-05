@@ -12,10 +12,8 @@
 gitHub项目地址：https://github.com/jsplumb/jsPlumb 
 
 网络资料：
-文档翻译类：
-https://segmentfault.com/a/1190000003826470
 http://www.cnblogs.com/leomYili/p/6346526.html 
-实用总结类：
+https://segmentfault.com/a/1190000003826470
 
                       
 
@@ -123,7 +121,7 @@ jsPlumb默认注册在浏览器的window对象中，为整个页面提供了一�
 1. 通过jsPlumb.connect(...)创建连接时动态创建，传入参数为source和target元素id或DOM元素；        
         
        
-    instance.connect({uuids: ["sourceId", "targetId" ], overlays: [...],  detachable: true,  reattach: true, editable: true});
+    myInstance.connect({uuids: ["sourceId", "targetId" ], overlays: [...],  detachable: true,  reattach: true, editable: true});
     
 2. 通过jsPlumb.addEndpoint(...)创建Endpoint添加到元素上
         
@@ -155,16 +153,23 @@ jsPlumb默认注册在浏览器的window对象中，为整个页面提供了一�
     };
     var e1 = instance.addEndpoint( "elId1", endpoint );
     var e2 = instance.addEndpoint( "elId2", endpoint );
-    instance.connect({ source: e1, target: e2 });
+    myInstance.connect({ source: e1, target: e2 });
     
 3. 当对元素设置过jsPlumb.makeSource(...)时，从元素拖拽出连线时就会创建并分配Endpoint。
 
-    a
+    myInstance.makeSource(el, endpoint); //el为元素对象，endpoint为上述配置对象
+    
 ####Connector
 连线。两个页面元素直接的连线，有四种类型，贝塞尔曲线(Bezier)、直线(Straight)、流程图(Flowchart)、状态器(StateMachine)，其中后两种类型支持连线的首末端都在一个元素上，形成回路。
+https://jsplumbtoolkit.com/community/doc/connectors.html
+使用connect方法创建连线：
+
+    myInstance.connect(...);
 
 ####Overlay
 叠加。连线上的装饰的组件，例如箭头(Arrow)、标签(Label)等等。具体参数前面的例子中有，详见官网。
+https://jsplumbtoolkit.com/community/doc/overlays.html 
+在前面的默认配置和Endpoint参数配置中已有相关的例子。
 ####Group
 分组
 
